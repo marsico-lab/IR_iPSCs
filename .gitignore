@@ -1,5 +1,3 @@
-# Curated GitHub payload for the slim resubmission deliverable.
-
 # Keep only the selected metadata table under data/.
 /data/*
 !/data/metadata_selected.csv
