@@ -98,7 +98,7 @@ Notebook guide:
 
 ## Running The R Workflows
 
-The updated collaborator code is organized by figure:
+The R code is organized by figure:
 
 - `R/Figure_1/`
   Figure 1 length, GC content, and nuclear enrichment analysis.
