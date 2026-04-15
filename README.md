@@ -7,7 +7,6 @@ This repository contains the Python notebooks, R scripts, R Markdown notebooks, 
 ```text
 .
 ├── README.md
-├── README.txt
 ├── environment-parnet_clean.yml
 ├── environment-tfmodisco.yml
 ├── environment-r.yml
@@ -26,7 +25,7 @@ Three environments are used in this repository:
 
 - `parnet-clean` for metadata assembly, model training, UMAP export, CAM export, figure generation, and Python notebooks
 - `tfmodisco` for motif discovery and motif report generation
-- `r` for the collaborator-supplied R analyses under `R/`
+- `r` for the R analyses under `R/`
 
 ### Main Analysis Environment
 
@@ -69,8 +68,6 @@ conda env create -f environment-r.yml
 conda activate r
 ```
 
-The collaborator R code is mirrored directly from `opts/iPSCs_IR_Speckles` into `R/`. Those scripts use figure-local relative paths, so the easiest way to run them is from the corresponding `scripts/` directory inside each figure folder.
-
 ## Running The Python Notebooks
 
 Launch Jupyter from the main analysis environment:
@@ -110,7 +107,7 @@ The updated collaborator code is organized by figure:
 - `R/Figure_4/`
   Figure 4 TSA-seq overlap analysis.
 - `R/Figure_4_distance/RANDOM_SPOTS/`
-  Random-spot null analyses for iPS and HUVEC distance-to-speckle measurements.
+  Random-spot null-distribution analyses for iPS and HUVEC distance-to-speckle measurements.
 
 These workflows assume they are launched from their local `scripts/` directory. Example commands:
 
@@ -130,28 +127,6 @@ cd ../../Figure_4_distance/RANDOM_SPOTS/scripts
 Rscript FINAL_iPS_IR_RNAS_vs_random_spots_KS.R
 Rscript FINAL_HUVEC_IR_RNAS_vs_random_spots_KS.R
 ```
-
-Each workflow creates its own `results/` directory if needed.
-
-## R Inputs Included In The Repository
-
-The collaborator snapshot bundled under `R/` includes:
-
-- `R/Figure_1/data/merged_data_GC_filtered.csv`
-- `R/Figure_2/data/merged_data_GC_filtered.csv`
-- `R/Figure_4/data/GSE81553_SON_TSA-Seq_Decile_Color_Condition2.bed`
-- `R/Figure_4_distance/RANDOM_SPOTS/Distance_to_speckles_HUVECs.xlsx`
-- `R/Figure_4_distance/RANDOM_SPOTS/Distance_to_speckles_iPSCs.xlsx`
-- `R/Figure_4_distance/RANDOM_SPOTS/HUVEC/*.xls`
-- `R/Figure_4_distance/RANDOM_SPOTS/iPS/*.xls`
-
-## Additional R Inputs Expected Locally
-
-One file referenced by the collaborator Figure 4 script is not present in the incoming snapshot:
-
-- `R/Figure_4/data/merged_data_GC_filtered.csv`
-
-If you want to rerun `R/Figure_4/scripts/Figure_4_TSAseq_IR_stability.R`, place that filtered table at the path above. The script already expects it there.
 
 ## Model Retraining Workflow
 
